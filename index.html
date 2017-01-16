@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="styles/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/fabric.min.js"></script>
+<script src="scripts/sketch.js"></script>
+<script src="scripts/download.js"></script>
+<script src="scripts/publish.js"></script>
+</head>
+
+<body>
+<nav id="nav_bar">
+  <ul class="nav_links">
+    <li><img src="images/logo.png" /></li>
+    <li><a href="#">Home</a></li>
+    <li id="feed-link"><a href="#">Your Feed</a></li>
+    <li><a href="#">Your Profile</a></li>
+    <li><a href="#">Log Out</a></li>
+  </ul>
+</nav>
+
+  <div id="leftbar">
+  
+  	<div id="profile-information">
+  
+			<div id="profile-picture-holder"><img src="images/profile-picture-holder.svg" id="profile-picture"/><div id="username-text">Your Username</div></div>
+  	
+  	<hr/>
+    
+		<div id="personal-details"><p>Date Joined: DD/MM/YYYY</p><p>Last Seen: A moment ago</p><p>Sketches: <span id="sketches">0</span></p><p>Likes Received: <span id="likes">0</span></p></div>
+		
+		</div>
+		
+		<div id="sketchmates-box" class="friends-box">
+			<div id="sketchmates-box-header" class="box-header"><div id="sketchmates-box-header-text">Sketchmates - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4</div></div>
+			<div class="friends-links">
+				<img src="images/prof-1.jpg" class="thumbnail-prof-photo" />
+				<img src="images/profile-picture-holder.svg" class="thumbnail-prof-photo" />
+				<img src="images/profile-picture-holder.svg" class="thumbnail-prof-photo" />
+				<img src="images/prof-2.jpg" class="thumbnail-prof-photo" />
+			</div>
+		</div>
+		
+		<div id="following-box" class="friends-box">
+			<div id="following-box-header" class="box-header"><div id="following-box-header-text">Following - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2</div></div>
+			<div class="friends-links">
+				<img src="images/profile-picture-holder.svg" class="thumbnail-prof-photo" />
+				<img src="images/prof-3.jpg" class="thumbnail-prof-photo" />
+			</div>
+		</div>
+  
+  </div>
+  
+  <div id="mainfeed">
+  	<div id="current-post">
+  		<div style="display: inline-block; margin-left: 10px">
+  
+</div>
+			<p style="font-size:20px;">Sketch Here</p>
+          <canvas id='c' width="300" height="300"></canvas>
+          <div id="tools">
+            <a href="#c" data-tool="marker" data-size="5">Marker</a>
+            <a href="#c" data-tool="eraser">Eraser</a>
+            <a href="#c" data-size="1000">Fill Background</a>
+            <a href="#c" data-download="png">Download</a>
+            <a href="#c" data-color="#f00" data-tool="marker" class="color-tool first-tool">Red</a>
+            <a href="#c" data-color="#ff0" data-tool="marker" class="color-tool">Yellow</a>
+            <a href="#c" data-color="#0f0" data-tool="marker" class="color-tool">Green</a>
+            <a href="#c" data-color="#0ff" data-tool="marker" class="color-tool">Light Blue</a>
+            <a href="#c" data-color="#00f" data-tool="marker" class="color-tool">Dark Blue</a>
+            <a href="#c" data-color="#f0f" data-tool="marker" class="color-tool">Pink</a>
+            <a href="#c" data-color="#000" data-tool="marker" class="color-tool">Black</a>
+            <a href="#c" data-color="#fff" data-tool="marker" class="color-tool">White</a>
+            <a href="#c" data-size="5" class="first-tool">Size 5</a>
+            <a href="#c" data-size="10">Size 10</a>
+            <a href="#c" data-size="15">Size 15</a>
+      		</div>
+          <script type="text/javascript">
+						$(function() {
+							$('#c').sketch({defaultColor: "#000"});
+						});
+					</script>
+          <button id="submit" onClick="publish();" title="Published!">Publish</button>
+        </div>
+        <hr/>
+        <div id="spacer" class="post"></div>
+		</div>
+  </div>
+</body>
+</html>
